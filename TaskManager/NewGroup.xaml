@@ -5,42 +5,48 @@
              x:Class="TaskManager.NewGroup">
     <VerticalStackLayout
         Padding="20"
-        BackgroundColor="#87CEEB"
+        BackgroundColor="White">
         <Frame
-            BackgroundColor="White"
-            CornerRadius="10"
+            BackgroundColor="#87CEEB"
+            CornerRadius="10">
         <StackLayout
                 Orientation="Vertical"
                 Padding="20">
-                <Entry
-                    x:Name="NameEntry"
-                    Placeholder="Name"
-                    PlaceholderColor="White"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center"/>
                 <Frame
-                    BackgroundColor="#DDA0DD"
+                    BackgroundColor="White"
+                    WidthRequest="350"
+                    CornerRadius="24">
+                    <Entry
+                        x:Name="NameEntry"
+                        Placeholder="Name"
+                        PlaceholderColor="Black"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"/>
+                </Frame>
+                <Frame
+                    BackgroundColor="White"
                     WidthRequest="350"
                     CornerRadius="24">
                     <Entry
                         x:Name="DescriptionEntry"
                         Placeholder="Description"
-                        PlaceholderColor="White"
+                        PlaceholderColor="Black"
                         FontSize="20"
                         HorizontalTextAlignment="Center"/>
                 </Frame>
                 <Frame
-                    BackgroundColor="#DDA0DD"
+                    BackgroundColor="White"
                     WidthRequest="350"
                     CornerRadius="24">
-                    <Entry
-                        x:Name="TaskEntry"
-                        Placeholder="Task Name"
-                        PlaceholderColor="White"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"/>
+                <Entry
+                    x:Name="TaskEntry"
+                    Placeholder="Task Name"
+                    PlaceholderColor="Black"
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"/>
                 </Frame>
-            </StackLayout>
+
+        </StackLayout>
         </Frame>
     </VerticalStackLayout>
 </toolkit:Popup>

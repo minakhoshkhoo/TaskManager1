@@ -10,8 +10,9 @@ public partial class GroupPage : ContentPage
 	}
     private void OnAddButtonClicked(object sender, EventArgs e)
     {
-        var newGroupPopup = new NewGroup();
-        newGroupPopup.Show();
+        //App.Current.MainPage = new GroupPage();
+        this.ShowPopup(new NewGroup());
+
     }
 
 }
