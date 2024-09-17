@@ -47,18 +47,6 @@
                     HeightRequest="60"
                     Margin="0, 0, 0, 30"/>
 
-                <Button
-                    Text="Member3"
-                    CornerRadius="20" 
-                    BackgroundColor="#DDA0DD"
-                    TextColor="White" 
-                    FontSize="28" 
-                    FontAttributes="Bold"
-                    HorizontalOptions="Fill" 
-                    VerticalOptions="Center" 
-                    WidthRequest="400" 
-                    HeightRequest="60"
-                    Margin="0, 0, 0, 30"/>
             </StackLayout>
         </ScrollView>
         <StackLayout
