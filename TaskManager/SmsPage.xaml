@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.SmsPage"
+             Title="SmsPage"
+             BackgroundColor="#81CEEB">
+    <StackLayout>
+        <Label
+            Text="S M S"
+            FontSize="120"
+            HorizontalOptions="Center"
+            TextColor="White"
+            Margin="0, 30, 0, 50"/>
+        <Frame
+            WidthRequest="250"
+            BackgroundColor="#81CEEB">
+            <Entry
+                HorizontalTextAlignment="Center"
+                FontAttributes="Italic"
+                Keyboard="Numeric"
+                FontSize="40"
+                MaxLength="5"
+                Placeholder="SMS Code"/>
+        </Frame>
+        <Label
+            x:Name="timerLabel"
+            Text="3:00"
+            TextColor="White"
+            HorizontalOptions="Center"
+            Margin="0, 30, 0, 0"
+            FontSize="50"/>
+        <Button
+            Text="Done"
+            BackgroundColor="#DDA0DD"
+            TextColor="Black"
+            FontSize="50"
+            FontAttributes="Bold"
+            CornerRadius="171"
+            WidthRequest="358"
+            HeightRequest="93"
+            Margin="0, 30, 0, 20"
+            Clicked="doneButton"/>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.Tasks"
+             Title="Tasks"
+             BackgroundColor="#81CEBB">
+    <StackLayout>
+        <Label
+            Text="All Tasks"
+            TextColor="Black"
+            FontSize="40"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            Margin="0, 40, 0, 70" 
+            />
+        <Button
+            Padding="20"
+            Text="+"
+            FontSize="30"
+            Clicked="OnAddButtonClicked"
+            HorizontalOptions="End"
+            VerticalOptions="EndAndExpand"
+            BackgroundColor="#DDA0DD"
+            TextColor="White"
+            CornerRadius="200"
+            Margin="0, 0, 0, 50"/>
+        <CollectionView
+                ItemsSource="{Binding Tasks}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                    Orientation="Horizontal">
+                        <Image
+                        Source="{Binding ImageSource}"
+                        Aspect="Fill"
+                        WidthRequest="100"
+                        HeightRequest="80"
+                        Margin="0, 0, 20, 0">
+                            <Image.GestureRecognizers>
+                                <!--<TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped" />-->
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label
+                        Text="{Binding TaskDescription}"
+                        VerticalOptions="Center" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

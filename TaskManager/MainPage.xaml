@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.MainPage"
+             Title="LoginPage"
+             BackgroundColor="#81CEEB">
+    <StackLayout>
+        <Label
+            Text="Login Page"
+            TextColor="White"
+            FontSize="48"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            Margin="0, 20, 0, 70"/>
+        <Image
+            Source="Resources/Images/account.png"
+            WidthRequest="150"
+            Margin="0, 0, 0, 40"/>
+        <Frame
+            BackgroundColor="#DDA0DD"
+            WidthRequest="350"
+            CornerRadius="24">
+            <Entry
+                x:Name="userNameEntry"
+                Placeholder="User Name"
+                PlaceholderColor="#000000"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                />
+        </Frame>
+        <Frame
+            Margin="0, 15, 0, 0"
+            BackgroundColor="#DDA0DD"
+            WidthRequest="350"
+            CornerRadius="24">
+            <Entry
+                x:Name="passwordEntry"
+                Placeholder="Password"
+                PlaceholderColor="#000000"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                IsPassword="True"/>
+        </Frame>
+        <Button
+            BackgroundColor="White"
+            WidthRequest="50"
+            Margin="0, 20, 30, 0"
+            HorizontalOptions="End"
+            Text="O"
+            FontSize="20"
+            Clicked="PasswordShow"/>
+
+
+        <Button
+            BackgroundColor="#DDA0DD"
+            Margin="0, 20, 0, 10"
+            WidthRequest="300"
+            HeightRequest="50"
+            CornerRadius="50"
+            Text="Login"
+            TextColor="Black"
+            FontSize="20"
+            FontAttributes="Bold, Italic"
+            Clicked="LoginButton"/>
+
+        <Button
+            Margin="0, 20, 0, 0"
+            BackgroundColor="#81CEEB"
+            Text="Forgot Password"
+            TextColor="Black"
+            />
+    </StackLayout>
+
+</ContentPage>

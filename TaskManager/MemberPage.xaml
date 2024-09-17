@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.MemberPage"
+             Title="MemberPage"
+             BackgroundColor="#81CEEB">
+    <StackLayout>
+        <Label
+            Text="Member Page"
+            HorizontalOptions="CenterAndExpand" 
+            FontSize="35" 
+            Margin="0, 10, 0, 20" 
+            FontAttributes="Bold"/>
+        <Entry
+            Placeholder="Search" 
+            PlaceholderColor="Orange"
+            FontSize="18" 
+            FontAttributes="Bold"
+            TextColor="White"
+            HorizontalOptions="FillAndExpand" 
+            Margin="0, 20, 0, 50"/>
+        <ScrollView>
+            <StackLayout>
+                <Button
+                    Text="Member1"
+                    CornerRadius="20" 
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White" 
+                    FontSize="28" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Fill" 
+                    VerticalOptions="Center" 
+                    WidthRequest="400" 
+                    HeightRequest="60"
+                    Margin="0, 0, 0, 30"/>
+
+                <Button
+                    Text="Member2"
+                    CornerRadius="20" 
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White" 
+                    FontSize="28" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Fill" 
+                    VerticalOptions="Center" 
+                    WidthRequest="400" 
+                    HeightRequest="60"
+                    Margin="0, 0, 0, 30"/>
+
+                <Button
+                    Text="Member3"
+                    CornerRadius="20" 
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White" 
+                    FontSize="28" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Fill" 
+                    VerticalOptions="Center" 
+                    WidthRequest="400" 
+                    HeightRequest="60"
+                    Margin="0, 0, 0, 30"/>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout
+            Padding="20"
+            VerticalOptions="EndAndExpand"
+            Margin="0, 0, 0, 50">
+
+            <Button
+                Text="+"
+                FontSize="30"
+                Clicked="OnAddButtonClicked"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                BackgroundColor="#DDA0DD"
+                TextColor="White"
+                CornerRadius="200"
+                Margin="0, 0, 0, 50"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
