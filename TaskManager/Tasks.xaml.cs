@@ -24,12 +24,14 @@ public partial class Tasks : ContentPage
         };
         BindingContext = this;
     }
-
-
+    private void PopUpButton_Clicked(object sender, EventArgs e)
+    {
+        App.Current.MainPage = new Tasks();
+    }
 
     private void OnAddButtonClicked(object sender, EventArgs e)
     {
-
+        this.ShowPopup(new NewTask());
     }
 
 
