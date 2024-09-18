@@ -13,17 +13,6 @@
             HorizontalOptions="Center"
             Margin="0, 40, 0, 70"/>
         <Button
-            Text="Group"
-            BackgroundColor="#DDA0DD"
-            TextColor="White"
-            FontSize="50"
-            FontAttributes="Bold"
-            CornerRadius="171"
-            WidthRequest="358"
-            HeightRequest="93"
-            Margin="0, 30, 0, 20"
-            Clicked="groupButton"/>
-        <Button
             Text="People"
             BackgroundColor="#DDA0DD"
             TextColor="White"
