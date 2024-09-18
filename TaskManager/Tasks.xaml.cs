@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 
 namespace TaskManager;
@@ -24,15 +25,20 @@ public partial class Tasks : ContentPage
         };
         BindingContext = this;
     }
-    private void PopUpButton_Clicked(object sender, EventArgs e)
+    private async void OnAddButtonClicked(object sender, EventArgs e)
     {
-        App.Current.MainPage = new Tasks();
+        Navigation.PushAsync(new NewTask());
     }
 
-    private void OnAddButtonClicked(object sender, EventArgs e)
-    {
-        this.ShowPopup(new NewTask());
-    }
+    //private void PopUpButton_Clicked(object sender, EventArgs e)
+    //{
+    //    App.Current.MainPage = new Tasks();
+    //}
+
+    //private void OnAddButtonClicked(object sender, EventArgs e)
+    //{
+    //    this.ShowPopup(new NewTask());
+    //}
 
 
 }

@@ -1,18 +1,12 @@
-using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
-using System.ComponentModel;
-using System.Formats.Tar;
 namespace TaskManager;
 
-public partial class NewGroup : CommunityToolkit.Maui.Views.Popup
+public partial class NewGroup : ContentPage
 {
     public NewGroup()
     {
         InitializeComponent();
     }
-    private async  void PopUpButto_Clicked(object sender, EventArgs e)
-    {
-        App.Current.MainPage = new GroupPage();
-    }
+    
 
 }

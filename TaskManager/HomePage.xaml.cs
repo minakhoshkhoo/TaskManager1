@@ -8,10 +8,10 @@ public partial class HomePage : ContentPage
 	{
 		InitializeComponent();
 	}
-    private async void groupButton(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new GroupPage());
-    }
+    //private async void groupButton(object sender, EventArgs e)
+    //{
+    //    Navigation.PushAsync(new GroupPage());
+    //}
 
     private async void peopleButton(object sender, EventArgs e)
     {

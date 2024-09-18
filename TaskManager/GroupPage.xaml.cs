@@ -8,10 +8,15 @@ public partial class GroupPage : ContentPage
 	{
 		InitializeComponent();
 	}
-    private void OnAddButtonClicked(object sender, EventArgs e)
+    private async void OnAddButtonClicked(object sender, EventArgs e)
     {
-        this.ShowPopup(new NewGroup());
-
+        Navigation.PushAsync(new NewGroup());
     }
+
+    //private void OnAddButtonClicked(object sender, EventArgs e)
+    //{
+    //    this.ShowPopup(new NewGroup());
+
+    //}
 
 }

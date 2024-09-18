@@ -1,3 +1,5 @@
+using CommunityToolkit.Maui.Views;
+
 namespace TaskManager;
 
 public partial class MemberPage : ContentPage
@@ -8,6 +10,7 @@ public partial class MemberPage : ContentPage
     }
     private async void OnAddButtonClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Tasks());
+        Navigation.PushAsync(new NewMember());
     }
+
 }

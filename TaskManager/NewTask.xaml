@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="TaskManager.NewTask">
+    <VerticalStackLayout>
+        <Frame>
+            <StackLayout
+                Orientation="Vertical">
+                <Entry
+                    x:Name="TaskNameEntry"
+                    Placeholder=" Task Name"
+                    PlaceholderColor="White"
+                    FontSize="20"
+                    FontAttributes="None"
+                    HorizontalTextAlignment="Center"/>
+
+                <Frame
+                    BackgroundColor="White"
+                    WidthRequest="350"
+                    CornerRadius="24">
+                    <Entry
+                         x:Name="MemberEntry"
+                         Placeholder="Member Id"
+                         PlaceholderColor="#DDA0DD"
+                         FontSize="20"
+                         HorizontalTextAlignment="Center"/>
+                </Frame>
+                <Frame
+                    BackgroundColor="White"
+                    WidthRequest="350"
+                    CornerRadius="24">
+                    <Entry
+                        x:Name="TaskDescriptionEntry"
+                        Placeholder="Description"
+                        PlaceholderColor="#DDA0DD"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <!--dedline-->
+                <Frame
+                    x:Name="Dedline">
+                    <Grid>
+                        <DatePicker
+                        MinimumDate="{Binding MinDate}"
+                        MaximumDate="{Binding MaxDate}"
+                        Date="{Binding SelectedDate}"
+                        HorizontalOptions="Center"/>
+                        <TimePicker
+                            Time="{Binding SelectedTime}" />
+                    </Grid>
+
+                </Frame>
+                <Frame
+                    BackgroundColor="White"
+                    WidthRequest="350"
+                    CornerRadius="24">
+                    <Entry
+                        x:Name="CostEntry"
+                        Placeholder="Cost"
+                        PlaceholderColor="#DDA0DD"
+                        Keyboard="Numeric"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"/>
+                </Frame>
+                <Frame
+                    BackgroundColor="White"
+                    WidthRequest="350"
+                    CornerRadius="24">
+                    <Entry
+                        x:Name="time"
+                        Placeholder="time"
+                        PlaceholderColor="#DDA0DD"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"/>
+                </Frame>
+                <!--prerequistes-->
+                
+
+
+                <!--couple-->
+                <Picker 
+                        x:Name="couple"
+                        Title="Select a couple task ">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>None</x:String>
+                            <x:String>task1</x:String>
+                            <x:String>task2</x:String>
+                            <x:String>task3</x:String>
+                            <x:String>task4</x:String>
+                            <x:String>task5</x:String>
+                            <x:String>task6</x:String>
+                            <x:String>task7</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <!--manager-->
+                <Picker 
+                    x:Name="Manager"
+                    Title="Select a Manager ">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>None</x:String>
+                            <x:String>member1</x:String>
+                            <x:String>member2</x:String>
+                            <x:String>member3</x:String>
+                            <x:String>member4</x:String>
+                            <x:String>member5</x:String>
+                            <x:String>member6</x:String>
+                            <x:String>member7</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+
+                <!--previous-->
+                <Picker
+                    x:Name="previos"
+                    Title="select a previos task">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>None</x:String>
+                            <x:String>task1</x:String>
+                            <x:String>task2</x:String>
+                            <x:String>task3</x:String>
+                            <x:String>task4</x:String>
+                            <x:String>task5</x:String>
+                            <x:String>task6</x:String>
+                            <x:String>task7</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <!--next task-->
+                <Picker
+                    x:Name="next"
+                    Title="select next task">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>None</x:String>
+                            <x:String>task1</x:String>
+                            <x:String>task2</x:String>
+                            <x:String>task3</x:String>
+                            <x:String>task4</x:String>
+                            <x:String>task5</x:String>
+                            <x:String>task6</x:String>
+                            <x:String>task7</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+            </StackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
+    

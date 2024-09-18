@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.Tasks"
              Title="Tasks"
-             BackgroundColor="#81CEBB">
+             BackgroundColor="#87CEBB">
     <StackLayout>
         <Label
             Text="All Tasks"

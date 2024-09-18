@@ -19,33 +19,69 @@
             TextColor="White"
             HorizontalOptions="FillAndExpand" 
             Margin="0, 20, 0, 50"/>
-        <ScrollView>
-            <StackLayout>
-                <Button
-                    Text="Member1"
-                    CornerRadius="20" 
-                    BackgroundColor="#DDA0DD"
-                    TextColor="White" 
-                    FontSize="28" 
-                    FontAttributes="Bold"
-                    HorizontalOptions="Fill" 
-                    VerticalOptions="Center" 
-                    WidthRequest="400" 
-                    HeightRequest="60"
-                    Margin="0, 0, 0, 30"/>
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="10">
+                <Frame CornerRadius="10"
+                       Padding="10"
+                       HasShadow="True"
+                       Margin="0,0,0,10">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="lead.png"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Center"/>
+                            <StackLayout VerticalOptions="Center"
+                                         HorizontalOptions="FillAndExpand"
+                                         Margin="10,0">
+                                <Label Text="Hesan Nemati"
+                                       FontSize="16"
+                                       FontAttributes="Bold"/>
+                                <Label Text="Lead"
+                                       TextColor="Green"
+                                       FontSize="14"/>
+                            </StackLayout>
+                        </StackLayout>
 
-                <Button
-                    Text="Member2"
-                    CornerRadius="20" 
-                    BackgroundColor="#DDA0DD"
-                    TextColor="White" 
-                    FontSize="28" 
-                    FontAttributes="Bold"
-                    HorizontalOptions="Fill" 
-                    VerticalOptions="Center" 
-                    WidthRequest="400" 
-                    HeightRequest="60"
-                    Margin="0, 0, 0, 30"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="profilethree.png"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Center"/>
+                            <StackLayout VerticalOptions="Center"
+                                         HorizontalOptions="FillAndExpand"
+                                         Margin="10,0">
+                                <Label Text="Sajjad Sharify"
+                                       FontSize="16"
+                                       FontAttributes="Bold"/>
+                                <Label Text="Programmer"
+                                       FontSize="14"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="profiletwo.png"
+                                   WidthRequest="40"
+                                   HeightRequest="40"
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Center"/>
+                            <StackLayout VerticalOptions="Center"
+                                         HorizontalOptions="FillAndExpand"
+                                         Margin="10,0">
+                                <Label Text="Pedram BaniArdalan"
+                                       FontSize="16"
+                                       FontAttributes="Bold"/>
+                                <Label Text="Programming Master"
+                                       TextColor="#006d77"
+                                       FontSize="14"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Repeat above Frame for each member -->
 
             </StackLayout>
         </ScrollView>
