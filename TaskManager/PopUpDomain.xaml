@@ -12,22 +12,36 @@
             <DataTemplate>
                 <StackLayout 
                     Orientation="Horizontal" 
-                    Padding="10">
+                    Padding="10"
+                    Spacing="50">
                     <Label 
                         Text="{Binding Name}" 
                         VerticalOptions="Center"/>
-                        <Switch 
+                    <VerticalStackLayout>
+                            <Label
+                                Text="Add"/>
+                            <Switch 
                             IsToggled = "true" 
                             HorizontalOptions="EndAndExpand"
                             OnColor="Green"/>
-                        <Switch 
+                    </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Edite"
+                                />
+                            <Switch 
                             IsToggled = "true" 
                             HorizontalOptions="EndAndExpand"
                             OnColor="Blue"/>
-                        <Switch 
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <Label
+                                Text="Delete "/>
+                            <Switch 
                             IsToggled = "true" 
                             HorizontalOptions="EndAndExpand"
                             OnColor="Orange"/>
+                        </VerticalStackLayout>
 
                     </StackLayout>
             </DataTemplate>
@@ -36,6 +50,7 @@
 
     <Button 
         Text="Confirm" 
-        Clicked="OnConfirmClicked"/>
+        Clicked="OnConfirmClicked"
+        BackgroundColor="#DDA0DD"/>
     </StackLayout>
 </toolkit:Popup>

@@ -8,13 +8,15 @@
         HeightRequest="400">
         <Editor 
             x:Name="editor"
-            Placeholder="Enter your response here"
+            Placeholder="Enter your description"
+            PlaceholderColor="Black"
             HeightRequest="250"/>
             <!--TextChanged="OnEditorTextChanged"
             Completed="OnEditorCompleted"--> 
         <Button
             Text="cancel"
-            Clicked="OnCancelClicked"/>
+            Clicked="OnCancelClicked"
+            Margin="0,20,0,20"/>
         <Button
             Text="Confrim"
             Clicked="Button_Clicked"/>

@@ -18,21 +18,16 @@
                     FontSize="30"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Margin="0, 0,0,50"/>
+                    Margin="0, 0,0,0"/>
                     <!--task name-->
-                    <Frame
-                    BackgroundColor="White"
-                    WidthRequest="500"
-                    CornerRadius="5"
-                    Margin="0,0,0,10">
                         <Entry
                             x:Name="TaskNameEntry"
                             Placeholder=" Task Name"
-                            PlaceholderColor="#DDA0DD"
+                            PlaceholderColor="Black"
                             FontSize="18"
                             FontAttributes="None"
                             HorizontalTextAlignment="Center"/>
-                    </Frame>
+                    
                     <!--a sign to a person-->
                     <Picker 
                         x:Name="MemberIdPicker"
@@ -51,16 +46,13 @@
                         </Picker.ItemsSource>
                     </Picker>
                     <!-- task description-->
-                    <Frame
-                    BackgroundColor="White"
-                    WidthRequest="350"
-                    CornerRadius="5"
-                        Margin="0,0,0,10">
+                    
                         <Button
                             x:Name="TaskDescriptionEntry"
                             Text="Description"
-                            Clicked="OnAddButtonClicked"/>
-                    </Frame>
+                            Clicked="OnAddButtonClicked"
+                            BackgroundColor="#DDA0DD"/>
+                    
 
                     <!--deadline-->
                     <VerticalStackLayout 
@@ -78,40 +70,32 @@
                         MaximumDate="2030-12-31" />
 
                         <TimePicker 
-                        x:Name="DeadlineTimePicker" />
+                            x:Name="DeadlineTimePicker" 
+                            Margin="0,0,0,0"/>
 
                         <Button 
-                        Text="Set Deadline"
-                        Clicked="OnSetDeadlineClicked" />
+                            Text="Set Deadline"
+                            Clicked="OnSetDeadlineClicked"
+                            BackgroundColor="#DDA0DD"
+                            Margin="0,0,0,0"/>
                     </VerticalStackLayout>
                     <!--cost of task-->
-                    <Frame
-                    BackgroundColor="White"
-                    WidthRequest="350"
-                    CornerRadius="5"
-                        Margin="0,0,0,10">
                         <Entry
                         x:Name="CostEntry"
                         Placeholder="Cost"
-                        PlaceholderColor="#DDA0DD"
+                        PlaceholderColor="Black"
                         Keyboard="Numeric"
                         FontSize="20"
                         HorizontalTextAlignment="Center"/>
-                    </Frame>
+                   
                     <!-- suggested time of task-->
-                    <Frame
-                        BackgroundColor="White"
-                        WidthRequest="350"
-                        CornerRadius="5"
-                        Margin="0,0,0,10">
-
                         <Entry
                         x:Name="time"
                         Placeholder="time"
-                        PlaceholderColor="#DDA0DD"
+                        PlaceholderColor="Black"
                         FontSize="20"
                         HorizontalTextAlignment="Center"/>
-                    </Frame>
+                    
                     <!--prerequistes-->
                     <Button
                         Text="prerequistes"
@@ -123,14 +107,16 @@
                     <SearchBar 
                         SearchButtonPressed="OnSearchButtonPressed"
                         TextChanged="OnSearchTextChanged"
-                        Placeholder="search for couple"/>
+                        Placeholder="search for couple"
+                        Margin="0,0,0,0"/>
                     <ListView 
                         x:Name="searchResults" >
                     </ListView>
                     <!--manager-->
                     <Picker 
                     x:Name="Manager"
-                    Title="Select a Manager ">
+                    Title="Select a Manager "
+                        Margin="0,0,0,0">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>None</x:String>
@@ -151,7 +137,8 @@
                         Text="task type"
                         BackgroundColor="#DDA0DD"
                         TextColor="White"
-                        Clicked="OnTaskTypeButtonClicked"/>
+                        Clicked="OnTaskTypeButtonClicked"
+                        Margin="0,0,0,20"/>
 
 
                     <Button

@@ -9,36 +9,24 @@
         BackgroundColor="White">
         <Frame
             BackgroundColor="#87CEEB"
-            CornerRadius="10">
-            <StackLayout
-                Orientation="Vertical"
-                Padding="20">
-                <Frame
-                    BackgroundColor="White"
-                    WidthRequest="350"
-                    CornerRadius="24">
+            CornerRadius="10"
+            Margin="0,0,0,70">
+                <StackLayout
+                    Orientation="Vertical"
+                    Padding="20">
+
                     <Entry
                         x:Name="FullNameEntry"
                         Placeholder="FullName"
                         PlaceholderColor="Black"
                         FontSize="20"
                         HorizontalTextAlignment="Center"/>
-                </Frame>
-                <Frame
-                    BackgroundColor="White"
-                    WidthRequest="350"
-                    CornerRadius="24">
                     <Entry
                         x:Name="UserNameEntry"
                         Placeholder="User Name"
                         PlaceholderColor="Black"
                         FontSize="20"
                         HorizontalTextAlignment="Center"/>
-                </Frame>
-                <Frame
-                    BackgroundColor="White"
-                    WidthRequest="350"
-                    CornerRadius="24">
                     <Entry
                     x:Name="PhoneNumberEntry"
                     Placeholder="Phone Number"
@@ -46,8 +34,7 @@
                     Keyboard="Telephone"
                     FontSize="20"
                     HorizontalTextAlignment="Center"/>
-                </Frame>
-                <StackLayout>
+                    <StackLayout>
                     <Label
                         Text="Select a jobposition"
                         Margin="0,10,0,0"/>
@@ -61,32 +48,37 @@
                     Text="Group"
                     BackgroundColor="#DDA0DD"
                     TextColor="White"
-                    FontSize="50"
+                    FontSize="30"
                     FontAttributes="Bold"
                     CornerRadius="171"
-                    WidthRequest="358"
-                    HeightRequest="93"
-                    Margin="0, 30, 0, 20"
+                    WidthRequest="258"
+                    HeightRequest="80"
+                    Margin="0, 0, 0, 15"
                     Clicked="OnAddButtonClicked"/>
                 <Button
                     Text="Domain"
                     BackgroundColor="#DDA0DD"
                     TextColor="White"
-                    FontSize="50"
+                    FontSize="30"
                     FontAttributes="Bold"
                     CornerRadius="171"
-                    WidthRequest="358"
-                    HeightRequest="93"
-                    Margin="0, 30, 0, 20"
+                    WidthRequest="258"
+                    HeightRequest="80"
+                    Margin="0, 0, 0, 15"
                     Clicked="OnAddDomainClicked"/>
-                    <Button
-                    Text="Save"
-                    BackgroundColor="#DDA0DD"
-                    TextColor="White"
-                    FontSize="40"
-                    Clicked="OnAddSaveClicked"/>
+                    
                 </StackLayout>
         </Frame>
+            <Button
+                Text="Save"
+                BackgroundColor="#DDA0DD"
+                TextColor="White"
+                FontSize="30"
+                Clicked="OnAddSaveClicked"
+                WidthRequest="400"
+                HeightRequest="60"/>
     </VerticalStackLayout>
+        
     </ScrollView>
+   
 </ContentPage>
