@@ -1,44 +1,124 @@
-using CommunityToolkit.Maui.Views;
+﻿using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using static Taskmanager.Domain;
 
 namespace TaskManager;
 
 public partial class Tasks : ContentPage
 {
-    public ObservableCollection<Task> Task { get; set; } = new ObservableCollection<Task>();
-    public ObservableCollection<TaskItem> TaskS { get; }
-
-    public class TaskItem
-    {
-        public string ImageSource { get; set; }
-        public string TaskDescription { get; set; }
-    }
+    int count = 0;
+    public List<TaskItem> TaskList { get; set; }
+    
+    public ObservableCollection<TaskItem> FilteredTaskItem { get; set; }
 
     public Tasks()
     {
         InitializeComponent();
 
-        TaskS = new ObservableCollection<TaskItem>
+        TaskList = new List<TaskItem>()
         {
-            new TaskItem { ImageSource = "image1.png", TaskDescription = "Task 1" },
-            new TaskItem { ImageSource = "image1.png", TaskDescription = "Task 2" }
+            new TaskItem { Name = "Task 1" ,IsSelected = false},
+            new TaskItem { Name = "Task 2",IsSelected = false },
+            new TaskItem { Name = "Task 3",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
+            new TaskItem { Name = "Task 4",IsSelected = false },
         };
-        BindingContext = this;
+
+        FilteredTaskItem = new ObservableCollection<TaskItem>(TaskList);
+
+        TaskCollectionView.ItemsSource = FilteredTaskItem;
+        
+    }
+
+
+
+    private async void OnAddTaskClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new NewTask());
+    }
+    public class TaskItem
+    {
+        public string Name { get; set; }
+        public bool IsSelected { get; set; }
     }
     private async void OnAddButtonClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new NewTask());
     }
+    
+    private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
+    {
+        var searchText = e.NewTextValue?.ToLower() ?? string.Empty;
 
-    //private void PopUpButton_Clicked(object sender, EventArgs e)
-    //{
-    //    App.Current.MainPage = new Tasks();
-    //}
+        
+        FilteredTaskItem.Clear();
 
-    //private void OnAddButtonClicked(object sender, EventArgs e)
-    //{
-    //    this.ShowPopup(new NewTask());
-    //}
+        
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            foreach (var task in TaskList)
+            {
+                FilteredTaskItem.Add(task);
+            }
+        }
+        else
+        {
+            
+            var filteredResults = TaskList.Where(t => t.Name.ToLower().Contains(searchText));
+            foreach (var task in filteredResults)
+            {
+                FilteredTaskItem.Add(task);
+            }
+        }
+    }
+
+    }
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//private void PopUpButton_Clicked(object sender, EventArgs e)
+//{
+//    App.Current.MainPage = new Tasks();
+//}
+
+//private void OnAddButtonClicked(object sender, EventArgs e)
+//{
+//    this.ShowPopup(new NewTask());
+//}

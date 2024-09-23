@@ -4,29 +4,21 @@
              x:Class="Taskmanager.Domain"
              Title="Domain"
              BackgroundColor="#87CEEB">
-    <StackLayout>
-        <Label
-        Text="domain"
-        TextColor="White"
-        FontSize="30"
-        FontAttributes="Bold"
-        HorizontalOptions="Center"
-        Margin="0, 8, 0, 5"/>
+    <StackLayout
+        Padding="30">
+        <Frame
+        BorderColor="#4A4BBA"
+            HasShadow="True"
+            BackgroundColor="#F7F5FA">
 
+            <Label
+            Text="Main Domains"
+            FontSize="26"
+            HorizontalOptions="Center"/>
+        </Frame>
+        
         <Button
-        Text="CPSA"
-        BackgroundColor="White"
-        TextColor="#DDA0DD"
-        FontSize="30"
-        FontAttributes="Bold"
-        CornerRadius="141"
-        WidthRequest="328"
-        HeightRequest="93"
-        Margin="0, 4, 0, 1"
-        Clicked="cpsaButton"/>
-
-        <Button
-        Text="Next Company"
+        Text="Company"
         BackgroundColor="White"
         TextColor="#DDA0DD"
         FontSize="30"
@@ -35,53 +27,18 @@
         WidthRequest="328"
         HeightRequest="93"
         Margin="0, 20, 0, 10"
-        Clicked="nextcompanyButton"/>
+        Clicked="OnCompanyButtonClicked"/>
 
-        <Label Text="All Tasks"
-                   FontSize="24" 
-               
-
-                 FontAttributes="Bold"
-                   Margin="0,20,0,10"
-                   HorizontalOptions="Center"/>
-
-
-        <Frame Margin="0,10" 
-                   BorderColor="#DDA0DD" 
-                   BackgroundColor="White" 
-                   CornerRadius="10" 
-                   HasShadow="True">
-            <ScrollView HeightRequest="300" Margin="0">
-                <StackLayout x:Name="TasksStack">
-                    <Label Text="Task 1" Padding="10" />
-
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-                    <Label Text="Task 2" Padding="10" />
-
-
-
-                </StackLayout>
-            </ScrollView>
-        </Frame>
-
-        <Button Text="+" 
-                    BackgroundColor="#DDA0DD"
-                    WidthRequest="50" 
-                    HeightRequest="50" 
-                    HorizontalOptions="End" 
-                    VerticalOptions="End"
-                    Margin="0,0,2,2"
-                    CornerRadius="20"
-                    Clicked="OnAddTaskButtonClicked"/>
+        
+        <Button 
+            Text="+" 
+            BackgroundColor="#DDA0DD"
+            WidthRequest="50" 
+            HeightRequest="50" 
+            HorizontalOptions="End" 
+            VerticalOptions="End"
+            Margin="0,20,0,0"
+            CornerRadius="50"
+            Clicked="OnAddTaskButtonClicked"/>
     </StackLayout>
 </ContentPage>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.MemberPage"
              Title="MemberPage"
-             BackgroundColor="#81CEEB">
+             BackgroundColor="#87CEEB">
     <StackLayout>
         <Label
             Text="Member Page"
@@ -11,14 +11,20 @@
             FontSize="35" 
             Margin="0, 10, 0, 20" 
             FontAttributes="Bold"/>
-        <Entry
-            Placeholder="Search" 
-            PlaceholderColor="Orange"
-            FontSize="18" 
-            FontAttributes="Bold"
-            TextColor="White"
-            HorizontalOptions="FillAndExpand" 
-            Margin="0, 20, 0, 50"/>
+        <SearchBar 
+           Placeholder="Search " 
+           TextChanged="OnSearchTextChanged"
+           TextColor="DarkBlue"
+           PlaceholderColor="Gray"
+           FontSize="20"
+           HeightRequest="50"/>
+        <Label
+            Text="Members List"
+            HorizontalOptions="StartAndExpand"
+            FontSize="Large"
+            TextColor="Purple"
+            Margin="15,0,0,0"/>
+
         <ScrollView Grid.Row="1">
             <StackLayout Padding="10">
                 <Frame CornerRadius="10"
@@ -85,6 +91,17 @@
 
             </StackLayout>
         </ScrollView>
+        <Button
+            Text="Group"
+            BackgroundColor="#DDA0DD"
+            TextColor="White"
+            FontSize="50"
+            FontAttributes="Bold"
+            CornerRadius="171"
+            WidthRequest="358"
+            HeightRequest="93"
+            Margin="0, 30, 0, 20"
+            Clicked="groupButton"/>
         <StackLayout
             Padding="20"
             VerticalOptions="EndAndExpand"

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="TaskManager.NewMember">
+    <ScrollView>
     <VerticalStackLayout
         Padding="20"
         BackgroundColor="White">
@@ -42,23 +43,50 @@
                     x:Name="PhoneNumberEntry"
                     Placeholder="Phone Number"
                     PlaceholderColor="Black"
+                    Keyboard="Telephone"
                     FontSize="20"
                     HorizontalTextAlignment="Center"/>
                 </Frame>
-                <Frame
-                    BackgroundColor="White"
-                    WidthRequest="350"
-                    CornerRadius="24">
-                    <Entry
-                        x:Name="JobPositionEntry"
-                         Placeholder="Job Position"
-                        PlaceholderColor="Black"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"/>
-                        
-                </Frame>
-
-            </StackLayout>
+                <StackLayout>
+                    <Label
+                        Text="Select a jobposition"
+                        Margin="0,10,0,0"/>
+                    <RadioButton Content="Manager"/>
+                    <RadioButton Content="Super admin"/>
+                    <RadioButton Content="Programer"/>
+                    <RadioButton Content="Employee"
+                                 IsChecked="True"/>
+                </StackLayout>
+                <Button
+                    Text="Group"
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White"
+                    FontSize="50"
+                    FontAttributes="Bold"
+                    CornerRadius="171"
+                    WidthRequest="358"
+                    HeightRequest="93"
+                    Margin="0, 30, 0, 20"
+                    Clicked="OnAddButtonClicked"/>
+                <Button
+                    Text="Domain"
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White"
+                    FontSize="50"
+                    FontAttributes="Bold"
+                    CornerRadius="171"
+                    WidthRequest="358"
+                    HeightRequest="93"
+                    Margin="0, 30, 0, 20"
+                    Clicked="OnAddDomainClicked"/>
+                    <Button
+                    Text="Save"
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White"
+                    FontSize="40"
+                    Clicked="OnAddSaveClicked"/>
+                </StackLayout>
         </Frame>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

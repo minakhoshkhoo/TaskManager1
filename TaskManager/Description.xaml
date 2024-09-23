@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="TaskManager.Description">
+    <StackLayout
+        WidthRequest="400"
+        HeightRequest="400">
+        <Editor 
+            x:Name="editor"
+            Placeholder="Enter your response here"
+            HeightRequest="250"/>
+            <!--TextChanged="OnEditorTextChanged"
+            Completed="OnEditorCompleted"--> 
+        <Button
+            Text="cancel"
+            Clicked="OnCancelClicked"/>
+        <Button
+            Text="Confrim"
+            Clicked="Button_Clicked"/>
+    </StackLayout>
+</toolkit:Popup>

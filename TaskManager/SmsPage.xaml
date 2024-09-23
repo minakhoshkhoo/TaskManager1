@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.SmsPage"
              Title="SmsPage"
-             BackgroundColor="#81CEEB">
+             BackgroundColor="#87CEEB">
     <StackLayout>
         <Label
             Text="S M S"

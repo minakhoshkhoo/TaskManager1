@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="TaskManager.File">
+    <VerticalStackLayout
+        Padding="10"
+        Spacing="25">
+        <Label 
+            x:Name=" prerequisteLbel"
+            Text="Selected a file and person"
+            FontSize="18"
+            HorizontalOptions="Center" />
+        <Button 
+            Text="Attach File" 
+            Clicked="OnAttachFileClicked" />
+        <Entry
+            Text="Link,Description,.."
+            BackgroundColor="White"/>
+        <Picker
+            x:Name="prerequisitePicker"
+            Title="select a person">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Member1</x:String>
+                    <x:String>Member2</x:String>
+                    <x:String>Member3</x:String>
+                    <x:String>Member4</x:String>
+                    <x:String>Member5</x:String>
+                    <x:String>Member6</x:String>
+                    <x:String>Member7</x:String>
+                    <x:String>Member8</x:String>
+                    <x:String>Member9</x:String>
+                    <x:String>Member10</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+    </VerticalStackLayout>
+
+</toolkit:Popup>
