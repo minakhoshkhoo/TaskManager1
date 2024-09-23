@@ -38,10 +38,16 @@
                         HorizontalTextAlignment="Center"/>
                 </Frame>
 
-                <!--dedline-->
-                <Frame
-                    x:Name="Dedline">
-                    <Grid>
+                    <!--deadline-->
+                    <VerticalStackLayout 
+                        Padding="10"
+                        Spacing="25">
+                        <Label 
+                        x:Name="DeadlineLabel"
+                        Text="Selected Deadline:"
+                        FontSize="18"
+                        HorizontalOptions="Center" />
+
                         <DatePicker
                         MinimumDate="{Binding MinDate}"
                         MaximumDate="{Binding MaxDate}"

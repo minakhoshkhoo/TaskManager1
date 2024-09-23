@@ -24,29 +24,5 @@
             TextColor="White"
             CornerRadius="200"
             Margin="0, 0, 0, 50"/>
-        <CollectionView
-                ItemsSource="{Binding Tasks}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout
-                    Orientation="Horizontal">
-                        <Image
-                        Source="{Binding ImageSource}"
-                        Aspect="Fill"
-                        WidthRequest="100"
-                        HeightRequest="80"
-                        Margin="0, 0, 20, 0">
-                            <Image.GestureRecognizers>
-                                <!--<TapGestureRecognizer
-                                    Tapped="TapGestureRecognizer_Tapped" />-->
-                            </Image.GestureRecognizers>
-                        </Image>
-                        <Label
-                        Text="{Binding TaskDescription}"
-                        VerticalOptions="Center" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
     </StackLayout>
 </ContentPage>
