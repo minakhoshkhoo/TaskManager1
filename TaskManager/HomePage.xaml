@@ -3,50 +3,185 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.HomePage"
              Title="HomePage"
-             BackgroundColor="#81CEEB">
-    <StackLayout>
-        <Label
-            Text="Home Page"
-            TextColor="White"
-            FontSize="48"
-            FontAttributes="Bold"
-            HorizontalOptions="Center"
-            Margin="0, 40, 0, 70"/>
-        <Button
-            Text="People"
-            BackgroundColor="#DDA0DD"
-            TextColor="White"
-            FontSize="50"
-            FontAttributes="Bold"
-            CornerRadius="171"
-            WidthRequest="358"
-            HeightRequest="93"
-            Margin="0, 30, 0, 20"
-            Clicked="peopleButton"/>
-        <Button
-            Text="Domain"
-            BackgroundColor="#DDA0DD"
-            TextColor="White"
-            FontSize="50"
-            FontAttributes="Bold"
-            CornerRadius="171"
-            WidthRequest="358"
-            HeightRequest="93"
-            Margin="0, 30, 0, 20"
-            Clicked="domainButton"/>
-        <Button
-            Text="Tasks"
-            BackgroundColor="#DDA0DD"
-            TextColor="White"
-            FontSize="50"
-            FontAttributes="Bold"
-            CornerRadius="171"
-            WidthRequest="358"
-            HeightRequest="93"
-            Margin="0, 30, 0, 20"
-            Clicked="tasksButton"/>
+             BackgroundColor="#87CEEB">
+    <Grid>
 
-    </StackLayout>
+        <Grid 
+            x:Name="MainContent">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer 
+                    Tapped="OnMainContentTapped" />
+            </Grid.GestureRecognizers>
+            <StackLayout>
+                <Label
+                    Text="Home Page"
+                    TextColor="White"
+                    FontSize="48"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Margin="30, 50, 0, 0"/>
+                <Button 
+                    Clicked="OnMenuClicked" 
+                    BackgroundColor="#87CEEB"
+                    CornerRadius="35"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    Margin="0,-50,320,0"
+                    Scale="2"
+                    ImageSource="Resources/Images/menu.png"/>
+                <Button
+                    Text="People"
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White"
+                    FontSize="50"
+                    FontAttributes="Bold"
+                    CornerRadius="171"
+                    WidthRequest="358"
+                    HeightRequest="93"
+                    Margin="0, 30, 0, 20"
+                    Clicked="peopleButton"/>
+                <Button
+                    Text="Domain"
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White"
+                    FontSize="50"
+                    FontAttributes="Bold"
+                    CornerRadius="171"
+                    WidthRequest="358"
+                    HeightRequest="93"
+                    Margin="0, 30, 0, 20"
+                    Clicked="domainButton"/>
+                <Button
+                    Text="Tasks"
+                    BackgroundColor="#DDA0DD"
+                    TextColor="White"
+                    FontSize="50"
+                    FontAttributes="Bold"
+                    CornerRadius="171"
+                    WidthRequest="358"
+                    HeightRequest="93"
+                    Margin="0, 30, 0, 20"
+                    Clicked="taskButton"/>
+            </StackLayout>
+        </Grid>
 
+        <Grid
+            x:Name="FlyoutMenu" 
+            BackgroundColor="White" 
+            WidthRequest="300"
+            HeightRequest="800"
+            Margin="-200,0,0,0"
+            IsVisible="False"
+            TranslationX="-100">
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Button 
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="2"
+                    WidthRequest="107"
+                    HeightRequest="40"
+                    Margin="-50,-300,-50,-100"
+                    Clicked="ProfileImageClicked" 
+                    ImageSource="Resources/Images/profilep.png"
+                    Scale="2.75"/>
+                <Button 
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="2"
+                    WidthRequest="107"
+                    HeightRequest="40"
+                    Margin="-50,-500,-50,-300"
+                    ImageSource="Resources/Images/task.png"
+                    Clicked="TasksImageClicked"
+                    Scale="2.75"/>
+
+                <Button 
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="2"
+                    WidthRequest="106"
+                    HeightRequest="40"
+                    Margin="-50,-700,-50,-500"
+                    Clicked="GroupsImageClicked"
+                    ImageSource="Resources/Images/group.png"
+                    Scale="2.77"/>
+
+                <Button 
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    CornerRadius="2"
+                    WidthRequest="107"
+                    HeightRequest="40"
+                    Margin="-50,-900,-50,-700"
+                    ImageSource="Resources/Images/massage.png"
+                    Scale="3"/>
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="Profile"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    FontSize="15" 
+                    CornerRadius="35"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    Margin="-70,-300,0,-100"
+                    Clicked="ProfileClicked"/>
+                <Button 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="Tasks" 
+                    TextColor="Black"
+                    FontSize="15" 
+                    CornerRadius="35"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    Margin="-70,-500,0,-300"
+                    BackgroundColor="White"
+                    Clicked="TasksClicked" />
+                <Button 
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Text="Groups"
+                    TextColor="Black"
+                   FontSize="15" 
+                   CornerRadius="35"
+                   WidthRequest="100"
+                   HeightRequest="40"
+                   Margin="-70,-700,0,-500"
+                    BackgroundColor="White"
+                    Clicked="GroupsClicked" />
+                <Button 
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="Massage"
+                    TextColor="Black"
+                   FontSize="15" 
+                   CornerRadius="35"
+                   WidthRequest="100"
+                   HeightRequest="40"
+                   Margin="-70,-900,0,-700"
+                    BackgroundColor="White"
+                    />
+            </Grid>
+        </Grid>
+    </Grid>
 
 </ContentPage>

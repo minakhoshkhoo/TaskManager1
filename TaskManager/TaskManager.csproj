@@ -58,6 +58,11 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\account.png" />
+	  <None Remove="Resources\Images\group.png" />
+	  <None Remove="Resources\Images\Massage.png" />
+	  <None Remove="Resources\Images\menu.png" />
+	  <None Remove="Resources\Images\profilep.png" />
+	  <None Remove="Resources\Images\task.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -102,6 +107,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="PopUpGroup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SmsPage.xaml">
