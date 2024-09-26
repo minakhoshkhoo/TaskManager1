@@ -4,119 +4,98 @@
              x:Class="TaskManager.MemberPage"
              Title="MemberPage"
              BackgroundColor="#87CEEB">
-    <StackLayout>
-        <Label
-            Text="Member Page"
-            HorizontalOptions="CenterAndExpand" 
-            FontSize="35" 
-            Margin="0, 10, 0, 20" 
-            FontAttributes="Bold"/>
-        <SearchBar 
-           Placeholder="Search " 
-           TextChanged="OnSearchTextChanged"
-           TextColor="DarkBlue"
-           PlaceholderColor="Gray"
-           FontSize="20"
-           HeightRequest="50"/>
-        <Label
-            Text="Members List"
-            HorizontalOptions="StartAndExpand"
-            FontSize="Large"
-            TextColor="Purple"
-            Margin="15,0,0,0"/>
+    <Grid 
+        Padding="10"
+        RowDefinitions="Auto,*,Auto,Auto">
+        
+        <Entry 
+            x:Name="SearchEntry" 
+            Placeholder="Search for members..."
+            TextChanged="OnSearchTextChanged" 
+            TextColor="Black"
+            Grid.Row="0" />
 
-        <ScrollView Grid.Row="1">
-            <StackLayout Padding="10">
-                <Frame CornerRadius="10"
-                       Padding="10"
-                       HasShadow="True"
-                       Margin="0,0,0,10">
-                    <StackLayout Orientation="Vertical">
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="lead.png"
-                                   WidthRequest="40"
-                                   HeightRequest="40"
-                                   Aspect="AspectFill"
-                                   VerticalOptions="Center"/>
-                            <StackLayout VerticalOptions="Center"
-                                         HorizontalOptions="FillAndExpand"
-                                         Margin="10,0">
-                                <Label Text="Hesan Nemati"
-                                       FontSize="16"
-                                       FontAttributes="Bold"/>
-                                <Label Text="Lead"
-                                       TextColor="Green"
-                                       FontSize="14"/>
-                            </StackLayout>
-                        </StackLayout>
+        <ListView 
+            x:Name="memberListView" 
+            ItemsSource="{Binding FilteredMembers}" 
+            HasUnevenRows="True" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem 
+                                        Text="Delete" 
+                                        BackgroundColor="White" 
+                                        Invoked="OnDeleteUser"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
 
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="profilethree.png"
-                                   WidthRequest="40"
-                                   HeightRequest="40"
-                                   Aspect="AspectFill"
-                                   VerticalOptions="Center"/>
-                            <StackLayout VerticalOptions="Center"
-                                         HorizontalOptions="FillAndExpand"
-                                         Margin="10,0">
-                                <Label Text="Sajjad Sharify"
-                                       FontSize="16"
-                                       FontAttributes="Bold"/>
-                                <Label Text="Programmer"
-                                       FontSize="14"/>
-                            </StackLayout>
-                        </StackLayout>
+                            <Grid 
+                                Padding="10" 
+                                ColumnDefinitions="Auto,*,*">
+                                
+                                <Image 
+                                    Source="profileone.png"
+                                    WidthRequest="60" 
+                                    HeightRequest="50" 
+                                    VerticalOptions="CenterAndExpand" 
+                                    Aspect="AspectFill" />
 
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="profiletwo.png"
-                                   WidthRequest="40"
-                                   HeightRequest="40"
-                                   Aspect="AspectFill"
-                                   VerticalOptions="Center"/>
-                            <StackLayout VerticalOptions="Center"
-                                         HorizontalOptions="FillAndExpand"
-                                         Margin="10,0">
-                                <Label Text="Pedram BaniArdalan"
-                                       FontSize="16"
-                                       FontAttributes="Bold"/>
-                                <Label Text="Programming Master"
-                                       TextColor="#006d77"
-                                       FontSize="14"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
+                                
+                                <StackLayout 
+                                    Grid.Column="1" 
+                                    VerticalOptions="CenterAndExpand">
+                                    <Label 
+                                        Text="{Binding Username}" 
+                                        FontSize="Medium" 
+                                        VerticalOptions="CenterAndExpand" />
+                                    <Label 
+                                        Text="{Binding GroupName}" 
+                                         FontSize="Small" 
+                                         TextColor="White" 
+                                         VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
 
-                <!-- Repeat above Frame for each member -->
+                                
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        Tapped="OnMemberTapped" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </SwipeView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-            </StackLayout>
-        </ScrollView>
-        <Button
-            Text="Group"
-            BackgroundColor="#DDA0DD"
-            TextColor="White"
-            FontSize="50"
-            FontAttributes="Bold"
-            CornerRadius="171"
-            WidthRequest="358"
-            HeightRequest="93"
-            Margin="0, 30, 0, 20"
-            Clicked="groupButton"/>
-        <StackLayout
-            Padding="20"
-            VerticalOptions="EndAndExpand"
-            Margin="0, 0, 0, 50">
+        
+        <Button 
+            Text="Groups"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            CornerRadius="10"
+            WidthRequest="350"
+            HeightRequest="50"
+            BackgroundColor="White"
+            TextColor="#DDA0DD"
+            FontSize="18"
+            Margin="0,10,0,15"
+            Clicked="OnGroupsButoonClicked"
+            Grid.Row="2" />
 
-            <Button
-                Text="+"
-                FontSize="30"
-                Clicked="OnAddButtonClicked"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                BackgroundColor="#DDA0DD"
-                TextColor="White"
-                CornerRadius="200"
-                Margin="0, 0, 0, 50"/>
-        </StackLayout>
-    </StackLayout>
+        <Button 
+            Text="+"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            CornerRadius="10"
+            WidthRequest="350"
+            HeightRequest="50"
+            BackgroundColor="White"
+            TextColor="#DDA0DD"
+            FontSize="18"
+            Clicked="OnAddUserButtonClicked"
+            Grid.Row="3" />
+    </Grid>
 </ContentPage>

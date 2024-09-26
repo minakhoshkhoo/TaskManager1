@@ -1,75 +1,78 @@
 using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
+using System.Security.Cryptography;
+using System.Windows.Input;
 
 namespace TaskManager;
 
 public partial class GroupPage : ContentPage
 {
+    private ObservableCollection<string> _groups;
+    public ObservableCollection<string> FilteredGroups { get; private set; }
 
-    public List<GroupItem> GroupList { get; set; } 
-    public ObservableCollection<GroupItem> FilteredGroupItem { get; set; }
     public GroupPage()
-	{
-		InitializeComponent();
-        GroupList = new List<GroupItem>()
-        {
-            new GroupItem { Name = "Group 1" },
-            new GroupItem { Name = "Group 2" },
-            new GroupItem { Name = "Group 3" },
-            new GroupItem { Name = "Group 4" }
-            
-        };
-        FilteredGroupItem = new ObservableCollection<GroupItem>(GroupList);
+    {
+        InitializeComponent();
+        _groups = new ObservableCollection<string>
+            {
+                "groupA",
+                "grouB",
+                "groupC",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
+                "groupD",
 
-        
-        GroupCollectionView.ItemsSource = FilteredGroupItem;
+            };
+        FilteredGroups = new ObservableCollection<string>(_groups);
+
+        groupListView.ItemsSource = FilteredGroups;
+
+
     }
-
     private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
     {
-        
-        var searchText = e.NewTextValue?.ToLower() ?? string.Empty;
+        string searchText = searchEntry.Text?.ToLower();
+        FilteredGroups.Clear();
 
-      
-        FilteredGroupItem.Clear();
-
-        
         if (string.IsNullOrWhiteSpace(searchText))
         {
-            foreach (var group in GroupList)
+            foreach (var group in _groups)
             {
-                FilteredGroupItem.Add(group);
+                FilteredGroups.Add(group);
             }
         }
         else
         {
-            
-            var filteredResults = GroupList.Where(g => g.Name.ToLower().Contains(searchText));
+            var filteredResults = _groups.Where(g => g.ToLower().Contains(searchText));
             foreach (var group in filteredResults)
             {
-                FilteredGroupItem.Add(group);
+                FilteredGroups.Add(group);
             }
         }
     }
+    public ICommand DeleteCommand { get; }
 
-    
-    public class GroupItem
-    {
-        public string Name { get; set; }
-    }
+
+
+
+
 
     private async void OnAddButtonClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new NewGroup());
     }
-    //private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
-    //{
-    //    string searchText = e.NewTextValue;
-    //}
-
-    private void OnSearchButtonPressed(object sender, EventArgs e)
-    {
-
-    }
-
 }

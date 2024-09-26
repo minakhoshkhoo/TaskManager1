@@ -3,60 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.GroupPage"
              Title="GroupPage"
-             BackgroundColor="#81CEEB">
-    <StackLayout>
-        <Label 
-            Text="Group Page" 
-            HorizontalOptions="CenterAndExpand" 
-            FontSize="35" 
-            Margin="0, 10, 0, 20" 
-            FontAttributes="Bold"/>
-        <Entry
-            x:Name="SearchEntry"
-            Placeholder="Search a group"
-            TextChanged="OnSearchTextChanged"/>
+              BackgroundColor="#81CEEB">
+    <StackLayout Padding="20">
+        <Entry x:Name="searchEntry" 
+               Placeholder="Search Groups..."
+               TextChanged="OnSearchTextChanged"/>
 
-        <ScrollView>
-            <Frame
-                BorderColor="#DDA0DD"
-                BackgroundColor="White"
-                CornerRadius="10"
-                Margin="10,0,10,50">
-
-                <CollectionView
-                    x:Name="GroupCollectionView"
-                    SelectionMode="Single">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout 
+        <ListView 
+            x:Name="groupListView" 
+            ItemsSource="{Binding FilteredGroups}" 
+            HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems 
+                                    Mode="Execute">
+                                    <SwipeItem 
+                                        Text="Delete"
+                                         BackgroundColor="White"
+                                         Command="{Binding BindingContext.DeleteCommand, Source={x:Reference groupListView}}"
+                                         CommandParameter="{Binding .}"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid 
                                 Padding="10">
                                 <Label 
-                                    Text="{Binding Name}" 
-                                    FontSize="20" />
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                                    Text="{Binding .}" 
+                                    VerticalOptions="Center"/>
+                            </Grid>
+                        </SwipeView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-            </Frame>
-        </ScrollView>
-
-        <StackLayout 
-            Padding="20" 
-            VerticalOptions="EndAndExpand"
-            Margin="0, 0, 0, 50">
-            
-            
-            <Button
-                Text="+"
-                FontSize="30"
-                Clicked="OnAddButtonClicked"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                BackgroundColor="#DDA0DD"
-                TextColor="White"
-                CornerRadius="200"
-                Margin="0, 0, 0, 50"/>
-        </StackLayout>
+        <Button 
+            Text=" + " 
+            CornerRadius="10"
+            WidthRequest="350"
+            HeightRequest="50"
+            BackgroundColor="#DDA0DD"
+            TextColor="White"
+            FontSize="18"
+            Clicked="OnAddButtonClicked"/>
     </StackLayout>
 </ContentPage>

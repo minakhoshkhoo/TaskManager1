@@ -3,82 +3,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="TaskManager.NewMember">
-    <ScrollView>
-    <VerticalStackLayout
-        Padding="20"
-        BackgroundColor="White">
-        <Frame
-            BackgroundColor="#87CEEB"
-            CornerRadius="10"
-            Margin="0,0,0,70">
-                <StackLayout
-                    Orientation="Vertical"
-                    Padding="20">
+    
+    <StackLayout 
+        Padding="20">
+        <Label 
+            Text="New Member" 
+            FontSize="24" 
+            FontAttributes="Bold" 
+            TextColor="Black"
+            HorizontalOptions="Center" />
 
-                    <Entry
-                        x:Name="FullNameEntry"
-                        Placeholder="FullName"
-                        PlaceholderColor="Black"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"/>
-                    <Entry
-                        x:Name="UserNameEntry"
-                        Placeholder="User Name"
-                        PlaceholderColor="Black"
-                        FontSize="20"
-                        HorizontalTextAlignment="Center"/>
-                    <Entry
-                    x:Name="PhoneNumberEntry"
-                    Placeholder="Phone Number"
-                    PlaceholderColor="Black"
-                    Keyboard="Telephone"
-                    FontSize="20"
-                    HorizontalTextAlignment="Center"/>
-                    <StackLayout>
-                    <Label
-                        Text="Select a jobposition"
-                        Margin="0,10,0,0"/>
-                    <RadioButton Content="Manager"/>
-                    <RadioButton Content="Super admin"/>
-                    <RadioButton Content="Programer"/>
-                    <RadioButton Content="Employee"
-                                 IsChecked="True"/>
-                </StackLayout>
-                <Button
-                    Text="Group"
-                    BackgroundColor="#DDA0DD"
-                    TextColor="White"
-                    FontSize="30"
-                    FontAttributes="Bold"
-                    CornerRadius="171"
-                    WidthRequest="258"
-                    HeightRequest="80"
-                    Margin="0, 0, 0, 15"
-                    Clicked="OnAddButtonClicked"/>
-                <Button
-                    Text="Domain"
-                    BackgroundColor="#DDA0DD"
-                    TextColor="White"
-                    FontSize="30"
-                    FontAttributes="Bold"
-                    CornerRadius="171"
-                    WidthRequest="258"
-                    HeightRequest="80"
-                    Margin="0, 0, 0, 15"
-                    Clicked="OnAddDomainClicked"/>
-                    
-                </StackLayout>
-        </Frame>
-            <Button
-                Text="Save"
-                BackgroundColor="#DDA0DD"
-                TextColor="White"
-                FontSize="30"
-                Clicked="OnAddSaveClicked"
-                WidthRequest="400"
-                HeightRequest="60"/>
-    </VerticalStackLayout>
-        
-    </ScrollView>
-   
+        <Entry 
+            x:Name="usernameEntry" 
+            Placeholder="Username" 
+            TextColor="Black"
+            Margin="0,10,0,0" />
+
+        <Entry 
+            x:Name="passwordEntry" 
+            Placeholder="Password" 
+            IsPassword="True" 
+            TextColor="Black"
+            Margin="0,10,0,0" />
+
+        <Entry 
+            x:Name="phonenumberEntry" 
+            Placeholder="Phone Number" 
+            TextColor="Black"
+            Margin="0,10,0,0" />
+
+        <Entry 
+            x:Name="jobpositionEntry" 
+            Placeholder="Job Position" 
+            TextColor="Black"
+            Margin="0,10,0,0" />
+
+
+        <Button 
+            x:Name="domainButton" 
+            Text="Domain" 
+            BackgroundColor="White"
+            TextColor="#DDA0DD"
+            Clicked="OnSelectDominClicked"
+            Margin="0,0,0,10" />
+
+
+        <Label 
+            Text="Group" 
+            Margin="0,10,0,0"/>
+
+        <Button 
+            x:Name="groupButton" 
+            Text="Select Group" 
+            BackgroundColor="White"
+            TextColor="#DDA0DD"
+            Clicked="OnSelectGroupClicked"
+            Margin="0,0,0,10" />
+
+        <Button 
+            Text="Save" 
+            BackgroundColor="#DDA0DD" 
+            TextColor="White" 
+            Clicked="OnSaveButtonClicked"/>
+    </StackLayout>
+
 </ContentPage>
