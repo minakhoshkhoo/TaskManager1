@@ -75,7 +75,7 @@ public partial class HomePage : ContentPage
     }
     private async void OnMainContentTapped(object sender, EventArgs e)
     {
-        // close a menu
+        
         await FlyoutMenu.TranslateTo(-250, 0, 250, Easing.SinIn);
         FlyoutMenu.IsVisible = false;
         _isFlyoutVisible = false;
@@ -86,5 +86,3 @@ public partial class HomePage : ContentPage
 
     }
 }
-
-

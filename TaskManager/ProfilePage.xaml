@@ -2,11 +2,69 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.ProfilePage"
-             Title="ProfilePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Profile">
+
+    <StackLayout 
+        Padding="20" 
+        Spacing="15">
+        
+        <Frame 
+            HasShadow="False" 
+            Padding="0" 
+            HorizontalOptions="Center">
+            <Image 
+                Source="profilep.png" 
+                WidthRequest="150" 
+                HeightRequest="150" 
+                Aspect="AspectFill" />
+        </Frame>
+
+        <StackLayout>
+            <Entry 
+            x:Name="UserNameEntry"
+            Placeholder="User Name"
+            PlaceholderColor="#DDA0DD"
+            Keyboard="Default"
+            FontSize="18" 
+            HorizontalOptions="Center"/>
+        <Entry
+                x:Name="EmailEntry"
+                Placeholder="Email Address"
+                PlaceholderColor="#DDA0DD"
+                Keyboard="Email"
+                HorizontalOptions="Center"
+                FontSize="18"/>
+            <Entry
+                x:Name="PhoneNumberEntry"
+                Placeholder="Phone Number"
+                PlaceholderColor="#DDA0DD"
+                Keyboard="Telephone"
+                HorizontalOptions="Center"
+                FontSize="18"/>
+            <Entry
+                x:Name="Description"
+                Placeholder="Description"
+                PlaceholderColor="#DDA0DD"
+                HorizontalOptions="Center"
+                Keyboard="Default"
+                FontSize="18"/>
+        </StackLayout>
+
+        
+        <StackLayout 
+            Orientation="Horizontal" 
+            HorizontalOptions="Center" 
+            Spacing="20">
+            <Button 
+                Text="Edite profile" 
+                BackgroundColor="#87CCEB" 
+                TextColor="White" 
+                Clicked="OnEditProfileClicked"/>
+            <Button 
+                Text="Exite" 
+                BackgroundColor="#DDA0DD"
+                TextColor="White" 
+                Clicked="OnLogoutClicked"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

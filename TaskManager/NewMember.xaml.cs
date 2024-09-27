@@ -11,12 +11,12 @@ public partial class NewMember : ContentPage
     private async void OnSelectGroupClicked(object sender, EventArgs e)
     {
         var groups = new List<string>()
-            {
+        {
                 "Group A",
                 "Group B",
                 "Group C",
 
-            };
+        };
         var result = await DisplayActionSheet("Select Group", "Cancel", null, groups.ToArray());
         if (result != "Cancel")
         {
@@ -46,7 +46,7 @@ public partial class NewMember : ContentPage
         
         await Navigation.PopAsync();
     }
-    private void OnAddDomainClicked(object sender, EventArgs e)
+    private void OnSelectDominClicked(object sender, EventArgs e)
     {
         this.ShowPopup(new PopUpDomain());
 

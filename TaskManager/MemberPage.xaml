@@ -27,7 +27,7 @@
                                 <SwipeItems>
                                     <SwipeItem 
                                         Text="Delete" 
-                                        BackgroundColor="White" 
+                                        BackgroundColor="#DDA0DD" 
                                         Invoked="OnDeleteUser"/>
                                 </SwipeItems>
                             </SwipeView.RightItems>
@@ -78,8 +78,8 @@
             CornerRadius="10"
             WidthRequest="350"
             HeightRequest="50"
-            BackgroundColor="White"
-            TextColor="#DDA0DD"
+            BackgroundColor="#DDA0DD"
+            TextColor="White"
             FontSize="18"
             Margin="0,10,0,15"
             Clicked="OnGroupsButoonClicked"
@@ -92,8 +92,8 @@
             CornerRadius="10"
             WidthRequest="350"
             HeightRequest="50"
-            BackgroundColor="White"
-            TextColor="#DDA0DD"
+            BackgroundColor="#DDA0DD"
+            TextColor="White"
             FontSize="18"
             Clicked="OnAddUserButtonClicked"
             Grid.Row="3" />

@@ -30,20 +30,25 @@
             x:Name="phonenumberEntry" 
             Placeholder="Phone Number" 
             TextColor="Black"
-            Margin="0,10,0,0" />
+            Margin="0,10,0,0" 
+            Keyboard="Telephone"/>
 
-        <Entry 
-            x:Name="jobpositionEntry" 
-            Placeholder="Job Position" 
-            TextColor="Black"
-            Margin="0,10,0,0" />
-
+        <StackLayout>
+            <Label
+                Text="Select a jobposition"
+                Margin="0,10,0,0"/>
+                <RadioButton Content="Manager"/>
+                <RadioButton Content="Super admin"/>
+                <RadioButton Content="Programer"/>
+                <RadioButton Content="Employee"
+                             IsChecked="True"/>
+        </StackLayout>
 
         <Button 
             x:Name="domainButton" 
             Text="Domain" 
-            BackgroundColor="White"
-            TextColor="#DDA0DD"
+            BackgroundColor="#DDA0DD"
+            TextColor="White"
             Clicked="OnSelectDominClicked"
             Margin="0,0,0,10" />
 
@@ -55,8 +60,8 @@
         <Button 
             x:Name="groupButton" 
             Text="Select Group" 
-            BackgroundColor="White"
-            TextColor="#DDA0DD"
+            BackgroundColor="#DDA0DD"
+            TextColor="White"
             Clicked="OnSelectGroupClicked"
             Margin="0,0,0,10" />
 

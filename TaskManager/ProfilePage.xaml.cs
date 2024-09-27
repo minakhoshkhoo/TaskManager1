@@ -6,4 +6,17 @@ public partial class ProfilePage : ContentPage
 	{
 		InitializeComponent();
 	}
+    private void OnEditProfileClicked(object sender, EventArgs e)
+    {
+
+        DisplayAlert("Edite profife", "Editing", "Ok");
+    }
+
+    
+    private void OnLogoutClicked(object sender, EventArgs e)
+    {
+        DisplayAlert("Exit", "...", "OK");
+        
+        // Application.Current.MainPage = new LoginPage();
+    }
 }
