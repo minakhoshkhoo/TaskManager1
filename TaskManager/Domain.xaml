@@ -5,40 +5,30 @@
              Title="Domain"
              BackgroundColor="#87CEEB">
     <StackLayout
-        Padding="30">
-        <Frame
-        BorderColor="#4A4BBA"
-            HasShadow="True"
-            BackgroundColor="#F7F5FA">
-
-            <Label
-            Text="Main Domains"
-            FontSize="26"
-            HorizontalOptions="Center"/>
+        Padding="30"
+        >
+        <Frame 
+            BorderColor="#4a4bba" 
+            HasShadow="True" 
+            BackgroundColor="#f7f5fa" >
+            <Label 
+                Text="Main Domains"   
+                FontSize="26"  
+                HorizontalOptions="Center"  />
         </Frame>
-        
-        <Button
-        Text="Company"
-        BackgroundColor="White"
-        TextColor="#DDA0DD"
-        FontSize="30"
-        FontAttributes="Bold"
-        CornerRadius="141"
-        WidthRequest="328"
-        HeightRequest="93"
-        Margin="0, 20, 0, 10"
-        Clicked="OnCompanyButtonClicked"/>
-
-        
         <Button 
-            Text="+" 
-            BackgroundColor="#DDA0DD"
-            WidthRequest="50" 
-            HeightRequest="50" 
-            HorizontalOptions="End" 
-            VerticalOptions="End"
-            Margin="0,20,0,0"
-            CornerRadius="50"
-            Clicked="OnAddTaskButtonClicked"/>
+            Text="Company" 
+            Clicked="OnCompanyButtonClicked" 
+            Margin="0,20,0,0" />
+
+
+        <Button 
+            Text=" + " 
+            Margin="0,20,0,0" 
+            CornerRadius="50" 
+            BackgroundColor="#DDA0DD"  />
+
+
     </StackLayout>
+
 </ContentPage>

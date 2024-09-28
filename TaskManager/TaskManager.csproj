@@ -58,11 +58,13 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\account.png" />
+	  <None Remove="Resources\Images\edit.png" />
 	  <None Remove="Resources\Images\group.png" />
 	  <None Remove="Resources\Images\Massage.png" />
 	  <None Remove="Resources\Images\menu.png" />
 	  <None Remove="Resources\Images\profilep.png" />
 	  <None Remove="Resources\Images\task.png" />
+	  <None Remove="Resources\Images\trashcan.png" />
 	</ItemGroup>
 
 	<ItemGroup>
