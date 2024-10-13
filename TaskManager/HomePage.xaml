@@ -171,14 +171,15 @@
                 <Button 
                     Grid.Row="4"
                     Grid.Column="1"
-                    Text="Massage"
+                    Text="Message"
                     TextColor="Black"
                    FontSize="15" 
                    CornerRadius="35"
                    WidthRequest="100"
                    HeightRequest="40"
                    Margin="-70,-900,0,-700"
-                    BackgroundColor="White"
+                   BackgroundColor="White"
+                   Clicked="MessageClicked"
                     />
             </Grid>
         </Grid>

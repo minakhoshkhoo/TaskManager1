@@ -1,4 +1,4 @@
-using Taskmanager;
+using TaskManager;
 using CommunityToolkit.Maui.Views;
 namespace TaskManager;
 

@@ -75,6 +75,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="DomainsAndSubdomains.xaml.cs">
+	    <DependentUpon>DomainsAndSubdomains.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Description.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -120,7 +126,7 @@
 	  <MauiXaml Update="SmsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="SubdomainsPage.xaml">
+	  <MauiXaml Update="DomainsAndSubdomains.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Tasks.xaml">

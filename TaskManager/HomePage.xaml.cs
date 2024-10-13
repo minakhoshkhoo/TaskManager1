@@ -1,5 +1,6 @@
+using Microsoft.Maui.Controls;
 using System;
-using Taskmanager;
+using TaskManager;
 namespace TaskManager;
 
 public partial class HomePage : ContentPage
@@ -75,7 +76,7 @@ public partial class HomePage : ContentPage
     }
     private async void OnMainContentTapped(object sender, EventArgs e)
     {
-        
+
         await FlyoutMenu.TranslateTo(-250, 0, 250, Easing.SinIn);
         FlyoutMenu.IsVisible = false;
         _isFlyoutVisible = false;
@@ -83,6 +84,12 @@ public partial class HomePage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
+        
+    }
+    private void MessageButton (object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new MassagePage());
 
     }
+    
 }
