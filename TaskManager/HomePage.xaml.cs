@@ -86,7 +86,7 @@ public partial class HomePage : ContentPage
     {
         
     }
-    private void MessageButton (object sender, EventArgs e)
+    private void MessageClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new MassagePage());
 
